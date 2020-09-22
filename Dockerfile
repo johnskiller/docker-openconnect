@@ -35,7 +35,7 @@ RUN buildDeps=" \
 	&& tar -xf ocserv.tar.xz -C /usr/src/ocserv --strip-components=1 \
 	&& rm ocserv.tar.xz* \
 	&& cd /usr/src/ocserv \
-	&& ./configure \
+	&& ./configure LDFLAGS="-static" \
 	&& make \
 	&& make install \
 	&& cd / \
